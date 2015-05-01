@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A21AD4F-E483-4F98-B1D7-87375E9BC201}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Serialization.Xml</RootNamespace>
+    <AssemblyName>XmlSerializable</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Internal\ArrayBuilder.cs" />
+    <Compile Include="Internal\Collections\IEnumerableEx.cs" />
+    <Compile Include="Internal\Collections\List.cs" />
+    <Compile Include="Internal\EnumEx.cs" />
+    <Compile Include="Internal\Func.cs" />
+    <Compile Include="Internal\HashCode.cs" />
+    <Compile Include="Internal\IO\SharedStream.cs" />
+    <Compile Include="Internal\IO\StreamEx.cs" />
+    <Compile Include="Internal\IO\StreamWrapper.cs" />
+    <Compile Include="Internal\IXmlSerializable.cs" />
+    <Compile Include="Internal\ObjectEx.cs" />
+    <Compile Include="Internal\Reflection\BindingFlagsEx.cs" />
+    <Compile Include="Internal\Reflection\MemberInfoEx.cs" />
+    <Compile Include="Internal\Reflection\PropertyInfoEx.cs" />
+    <Compile Include="Internal\Reflection\ReflectionHelper.cs" />
+    <Compile Include="Internal\StringEx.cs" />
+    <Compile Include="Internal\TypeEx.cs" />
+    <Compile Include="Internal\XmlCollectionSerializer.cs" />
+    <Compile Include="Internal\XmlEnumSerializer.cs" />
+    <Compile Include="Internal\XmlObjectSerializer.cs" />
+    <Compile Include="Internal\XmlPrimitiveSerializer.cs" />
+    <Compile Include="Internal\XmlQualifiedNameComparer.cs" />
+    <Compile Include="Internal\XmlSerializableSerializer.cs" />
+    <Compile Include="Internal\XmlSerializerBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlBinaryStream.cs" />
+    <Compile Include="XmlElementDictionary.cs" />
+    <Compile Include="XmlFragment.cs" />
+    <Compile Include="XmlNameDeclaration.cs" />
+    <Compile Include="XmlReaderExtensions.cs" />
+    <Compile Include="XmlSerializable.cs" />
+    <Compile Include="XmlSerializableSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XmlSerializable.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
