@@ -85,4 +85,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="Package" DependsOnTargets="Build">
+    <Exec Command="nuget pack .\XmlSerializable.csproj -Prop Configuration=$(Configuration)" />
+  </Target>
 </Project>
